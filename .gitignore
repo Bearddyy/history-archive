@@ -1,0 +1,12 @@
+# Local research data and source material
+/data/*.json
+/raw/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Windows
+Thumbs.db
+Desktop.ini
