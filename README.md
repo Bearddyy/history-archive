@@ -1,34 +1,36 @@
-# history-archive
+# History Archive
 
-Structured knowledge base for local-historical research around
-**Stanstead Abbots / Stanstead St Margarets (with Hailey) / Hunsdon**, Hertfordshire —
-field names, farms, families, and the documentary trail between them.
+A reusable, source-driven toolkit and schema for historical research about
+places, people, and the documentary evidence connecting them. The notes in this
+repository document one current case study; the data model and workflow are not
+limited to that location or its record types.
 
 ## What this repo is
 
-A git-tracked, agent-friendly archive of **research methods and documentation**.
+This repository tracks the research methods, schema, scripts, and documentation.
 The machine-queryable JSON index in `data/` and downloaded/source material in
 `raw/` are local working data and are intentionally excluded from Git because
-they can grow substantially. `docs/` holds narrative notes. The design goal:
-when a *new* source repository is found (e.g. Feet of Fines at
-medievalgenealogy.org.uk, an online tithe database, a printed Cal. Inq. p.m.), you run
-every indexed name through the new source and merge hits back into the index with one
-update pass — see `docs/WORKFLOW.md`.
+they can grow substantially. For each research area, register sources, search
+them systematically for known names and variants, and cite any findings back
+to the source. See [`docs/WORKFLOW.md`](docs/WORKFLOW.md).
 
 ## Layout
 
 ```
-archive-kb/
+history-archive/
 ├── data/
 │   └── schema.md          # field-level definitions; local JSON files are gitignored
 ├── raw/                   # local source downloads/transcriptions (gitignored)
 ├── docs/
-│   ├── WORKFLOW.md        # how to ingest a new source; query recipes
-│   ├── research-notes.md  # narrative findings (Slap Ladies, Olives Farm, Briggens…)
+│   ├── WORKFLOW.md        # reusable source-ingestion workflow
+│   ├── research-notes.md  # current case-study narrative and open questions
 │   └── DESIGN.md          # rationale, alternatives considered, future ideas
 └── scripts/
     └── kb.py              # query tool: name lookup, variant expansion, source dump
 ```
+
+`scripts/fof_extract.py` is a source-specific parser for the current case study,
+not a general-purpose ingestion tool.
 
 ## Local research data
 
@@ -41,15 +43,14 @@ Keep an independent backup of this local research data.
 
 ## Data model (short version)
 
-- **Source** (`S-*`): anything a name can be found *in* — an archive bundle
-  (HALS `DE/B1630/T41`), a search repository (Feet of Fines abstracts), a book
-  (VCH Herts III), a website. Sources have a `searchable` block recording *how* to
-  query them programmatically, so future agents can re-run all names against them.
+- **Source** (`S-*`): anything an entity or fact can be found in — an archive
+  item, database, book, map, website, or other source. Sources can have a
+  `searchable` block recording how to query them programmatically.
 - **Place / Person** (`P-*`, `PPL-*`): a canonical entity with a description, an
   array of **variants** (each with the spelling and the year/source it was seen in),
   and an array of **attestations** (who/what/where, cited to a source id).
 - **Event** (`E-*`): a dated transaction linking people to places
-  (transfer, purchase, bequest, conveyance) — the deeds/title-tracking layer.
+  (for example a transfer, purchase, bequest, or other documented event).
 
 Full definitions: [`data/schema.md`](data/schema.md). The JSON records described
 there are local-only and are not included in Git.
@@ -60,15 +61,14 @@ there are local-only and are not included in Git.
 
 ```
 python scripts/kb.py variants            # every variant string — paste into a new source's search box
-python scripts/kb.py show P-olive-farm   # one entity, fully expanded with citations
-python scripts/kb.py grep briggen        # substring across names/variants/descriptions
-python scripts/kb.py events --person PPL-spark
+python scripts/kb.py show P-example      # one entity, fully expanded with citations
+python scripts/kb.py grep example        # substring across names/variants/descriptions
+python scripts/kb.py events --person PPL-example
 python scripts/kb.py sources --searchable  # repositories that can be re-queried
 ```
 
-Related external tooling: `tna-search` CLI (separate repo
-`C:\Users\Byrne\tna-discovery-search`) for the UK National Archives Discovery API,
-rate-limited + cached.
+External search tools and access instructions are specific to each source; keep
+them in the corresponding source record or case-study notes.
 
 ## Conventions
 

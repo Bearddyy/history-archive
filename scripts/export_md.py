@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Render archive-kb JSON entries as pretty, human-readable Markdown.
+"""Render historical-research JSON entries as human-readable Markdown.
 
 Usage:
     python scripts/export_md.py data/places.json                # whole file
-    python scripts/export_md.py data/places.json --id P-olive-farm
+    python scripts/export_md.py data/places.json --id P-example-place
     python scripts/export_md.py data/places.json -o olives.md
     python scripts/export_md.py all                              # all four, combined
 
@@ -298,7 +298,7 @@ def export(datadir: Path, filename: str, ent_id=None, title=None):
             st = {"referenced-only": " — *not yet obtained, cited second-hand*",
                   "unavailable": " — *not yet accessible*"}.get(s.get("status"), "")
             out.append(f"- {link}{extra}{st}")
-    out.append("\n---\n_Compiled from the archive-kb evidence database._")
+    out.append("\n---\n_Compiled from the historical-research evidence database._")
     return "\n".join(out) + "\n"
 
 
@@ -306,7 +306,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("path", help="JSON data file (e.g. data/places.json) or 'all'")
-    ap.add_argument("--id", help="export a single entry id (e.g. P-olive-farm)")
+    ap.add_argument("--id", help="export a single entry id (e.g. P-example-place)")
     ap.add_argument("-o", "--out", help="write to file instead of stdout")
     ap.add_argument("--data-dir", help="override the data directory")
     args = ap.parse_args()
@@ -314,8 +314,8 @@ def main():
     p = Path(args.path)
     if args.path == "all":
         datadir = Path(args.data_dir) if args.data_dir else Path(__file__).resolve().parent.parent / "data"
-        parts = ["# Stanstead Abbots & Hunsdon — heritage research notes\n",
-                 "_A structured record of field names, farms, families and the documents that mention them._\n\n---\n"]
+        parts = ["# Heritage research notes\n",
+                 "_A structured record of places, people, events, and the sources that document them._\n\n---\n"]
         for name in ["places.json", "people.json", "events.json"]:
             if (datadir / name).exists():
                 parts.append(export(datadir, name))

@@ -1,6 +1,6 @@
-# Stanstead Abbots & Hunsdon — heritage research notes
+# Heritage research notes
 
-_A structured record of field names, farms, families and the documents that mention them._
+_A structured record of places, people, events, and the sources that document them._
 
 ---
 
@@ -3897,7 +3897,7 @@ Plain numerary closes distinct from the numerary sets held on P-lodge-farm: plot
 - S-hals-DE-Bx-T13
 
 ---
-_Compiled from the archive-kb evidence database._
+_Compiled from the historical-research evidence database._
 
 # People — heritage notes
 _Contents: John Olyue (Olive) I, Joan Olyue (Olive), William Spark (I), Joan Spark, John Shelley, William Crowley, Robert Chester, Rev. Charles Phelips, Thomas Blackmore (I, of Covent Garden), Thomas Blackmore (II, of Briggins), Feildes family (of Stanstead Abbots), Mr Reeve, John de Louetost (Louetot), Adam de Stratton, Richard Scrope, Thomas Conyers, John de Morewell, William Rokesburgh, Nicholas Blake, John Fraunceys, Henry Melleward, John Grey, Sir Andrew Ogard (Ogart, Aagard), knight (d.1454), Spyce / Spice family (of Baas and Eastwick)_
@@ -4443,7 +4443,7 @@ Richard Spyce held the manor of Baas (Broxbourne) with Hoddesdon/Amwell/Wormley/
 - [S-cchr-1443-rye](https://www.gatehouse-gazetteer.info/LOC/14430707.html)
 
 ---
-_Compiled from the archive-kb evidence database._
+_Compiled from the historical-research evidence database._
 
 # Events — heritage notes
 _Contents: 94 entries_
@@ -5863,4 +5863,4 @@ _E-1839-tithe-stanstead-abbots_
 - Stanstead Abbots tithe award schedule 1839 — digitised transcription (plot no, name, cultivation, owner, occupier) — local (user transcription of the DSA4/97 / IR 29-30-15-90 award)
 
 ---
-_Compiled from the archive-kb evidence database._
+_Compiled from the historical-research evidence database._

@@ -9,7 +9,7 @@ All files are JSON arrays of objects. UTF-8. IDs are permanent.
 | id | str | `S-tna-ir29` etc. |
 | title | str | |
 | kind | enum | `archive-bundle` \| `search-repository` \| `series` \| `book` \| `web` \| `map` \| `oral` |
-| holder | str? | archive holding it (HALS, TNA…) |
+| holder | str? | archive or organisation holding it |
 | ref | str? | shelfmark / call number |
 | url | str? | |
 | date | str? | coverage of the source itself |
@@ -23,7 +23,7 @@ All files are JSON arrays of objects. UTF-8. IDs are permanent.
 
 | field | type | notes |
 |---|---|---|
-| id | str | `P-olive-farm`, `P-dung-field` |
+| id | str | stable place identifier, e.g. `P-example-place` |
 | name | str | canonical modern form |
 | type | enum | `farm` \| `field` \| `manor` \| `house` \| `lane` \| `watercourse` \| `wood` \| `hamlet` \| `parish` \| `other` |
 | parish | str? | |

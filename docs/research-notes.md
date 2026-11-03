@@ -1,5 +1,8 @@
 # Research notes (narrative)
 
+These notes record the current Hertfordshire case study and are not a general
+research template.
+
 Structured claims live in `data/*.json`; this file is for the story-in-progress,
 dead ends, and reasoning that isn't yet an attestation. Rendered views of the
 structured data go to `ALL-NOTES.md` (generated — do not hand-edit).

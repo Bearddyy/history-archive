@@ -1,5 +1,8 @@
 # Retrieval / digitisation wish-list
 
+This is the retrieval list for the current Hertfordshire case study; references
+and priorities are location-specific.
+
 Documents worth obtaining (viewing at the repository, ordering reproduction, or
 digitising) to advance the open questions. Ordered by value-per-effort.
 "Answers" names the KB entities/questions each document would settle.

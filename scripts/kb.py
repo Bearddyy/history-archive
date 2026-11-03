@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""archive-kb query helper (stdlib only)."""
+"""Historical-research knowledge-base query helper (stdlib only)."""
 import argparse, json, sys
 from pathlib import Path
 

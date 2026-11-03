@@ -17,14 +17,18 @@ outgrows flat files; JSON stays source of truth.
   hits CSV for triage (respect each source's access notes).
 - Scans/photos: `scans/` convention (probably gitignored, synced separately),
   referenced from source `notes`.
-- A person disambiguation policy per century ("John Olive I/II") — currently
-  by `-1`/`-2` suffix, first-attested year ordering.
-- Consider a `P-*` `tithe_plot` field once IR 29/15/90 is transcribed — plots
-  244/287/288/331/332 are the spine connecting the friend's email to documents.
-- Geodata: NGRs are stored; a GeoJSON export (derived) would let QGIS view the
-  field system over 1898-1914 OS maps when more plots are pinned.
+- A consistent person-disambiguation policy for people with similar names.
+- Optional location geometry and GIS exports as derived views when coordinates
+  or boundaries are available.
+
+## Current case-study ideas
+- Review the person disambiguation convention (currently numbered suffixes,
+  ordered by first-attested year) against other periods and name patterns.
+- Consider adding a source-specific field for tithe plot references once the
+  relevant schedule is fully transcribed.
 
 ## Sensitivity
-Nothing here is personal data of living persons. If census transcription adds
-named individuals born <100 yrs ago, keep those files in `raw/` (gitignored)
-until out of the data-protection window.
+Assess privacy, copyright, and access restrictions for each project and source.
+Do not add sensitive personal data or restricted source material to public
+version control; keep permitted local copies outside Git and follow applicable
+retention and access rules.

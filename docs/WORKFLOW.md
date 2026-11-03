@@ -5,7 +5,7 @@ Every fact enters the KB through a **source**. No source → it goes in
 `docs/research-notes.md` as narrative, or as `confidence: tradition` with the
 book that says it.
 
-## Ingesting a new source repository (the "Fleet of Fines pattern")
+## Ingesting a new source or collection
 
 1. **Register the source** in `data/sources.json` — most importantly the
    `searchable` block: method, URL template with `{query}` placeholder, which
@@ -16,8 +16,9 @@ book that says it.
    ```
    python scripts/kb.py variants            # all spellings, deduped
    ```
-   Prefer the *earliest* variant + canonical name for each entity; try
-   wildcard stems (`Brigg*`, `Stanstead`, `Olyue`/`Olive`).
+   Prefer the earliest attested variant plus the canonical name for each
+   entity. Where the source supports it, test spelling variants and wildcard
+   stems.
 3. **Run the sweep** against the new repository, one query per stem, polite
    delays. Save raw responses under `raw/<source-id>/` (gitignore is fine for
    bulk) and note in the source entry where the raw dump lives.
@@ -31,8 +32,9 @@ book that says it.
    git add -A && git commit -m "ingest <source-id>: +N attestations"
    ```
 
-## Adding a document you read on paper (HALS/Kew)
-1. Add its `S-hals-…` entry (shelfmark, title verbatim from the catalogue).
+## Adding a document consulted in person
+1. Add a source entry with its reference, title as given by the holding
+   institution, and access details.
 2. Add variant/attestation records quoting the transcript (or the calendar
    entry text, cited to the print series if you didn't see the original —
    mark `confidence` accordingly).
@@ -46,7 +48,11 @@ book that says it.
 - One id covering two people (e.g. two Thomas Blackmores): split into
   `…-1` / `…-2` and fix references (`kb.py rewire` TODO — until then, grep).
 
-## Known access quirks (as of Oct 2026)
+## Source-specific access notes
+
+The following notes apply to sources used in the current case study; they are
+examples, not requirements for other research areas.
+
 - HALS catalogue: Cloudflare — desktop preview pane works, curl/headless fail.
 - TheGenealogist tithe collection: paywalled + Cloudflare. Tithe apportionments
   free at Kew reading room (IR 29 series).
@@ -55,7 +61,7 @@ book that says it.
   exit code 4 = day's quota gone — stop, don't retry).
 - british-history.ac.uk (VCH): plain curl works.
 
-## Search recipes worth remembering
+## Search recipes from the current case study
 - Feet of fines Stanstead/Herts sweep: place=Stanstead, county=Hertfordshire →
   45 entries incl. the 1343 Olyue/Spark fine (CP 25/1/89/79 no. 274).
 - TNA compound query for Briggens: `("Briggen" OR "Briggens" OR "Newgates")`
