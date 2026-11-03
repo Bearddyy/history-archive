@@ -1,4 +1,4 @@
-# archive-kb
+# history-archive
 
 Structured knowledge base for local-historical research around
 **Stanstead Abbots / Stanstead St Margarets (with Hailey) / Hunsdon**, Hertfordshire —
